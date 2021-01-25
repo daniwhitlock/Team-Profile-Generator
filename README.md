@@ -21,11 +21,8 @@ This application can be used to create a styled HTML document simply by entering
 Help was given by staff at University of Utah's Full Flex Coding Bootcamp Course
 
 ## License
-Insert badge
-img.shields.io/badge/license-MIT-brightgreen 
+![image](https://img.shields.io/badge/license-MIT-brightgreen)
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
 
 ## Tests
 To run test, simply type in: <npm run test> in the command line on your preferred application
