@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: rgb(14, 59, 17);
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 60px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    background-color: rgb(216, 219, 216);
+}
+.card-body {
+    padding: 0;
+}
+
+.card-title {
+    background-color: rgb(65, 16, 56);
+    color: white;
+    text-align: center;
+}
+
+.employee-info {
+    padding: 10px;
+}
+.employee-info p {
+    background-color: white;
+    text-align: left;
+    padding-left: 20px
+}
+
+.italics{
+    font-style: italic;
+}
+
+
