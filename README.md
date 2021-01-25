@@ -1,4 +1,33 @@
 # Team-Profile-Generator
+
 ## Description
-Using node and command line, fill out a series of questions regarding employees and watch as an html document is created. 
+Fill out a series of questions regarding employees in the command line and generate a styled HTML document with collected data. 
+
+## Installation 
+You will need to have some form of command line installed on your computer. If you use a mac, they already have a command line built in, however, if you have windows, you will need to download [gitBash](https://git-scm.com/)
+
+This program also uses the following programs:
+* [Inquirer package](https://www.npmjs.com/package/inquirer)
+* [Jest package](https://www.npmjs.com/package/jest)
+
+## Usage
+This application can be used to create a styled HTML document simply by entering data into the command line
+//insert screen shot
+
+//insert video
+
+
+## Credits
+Help was given by staff at University of Utah's Full Flex Coding Bootcamp Course
+
+## License
+Insert badge
+img.shields.io/badge/license-MIT-brightgreen 
+
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+
+## Tests
+To run test, simply type in: <npm run test> in the command line on your preferred application
+
 
