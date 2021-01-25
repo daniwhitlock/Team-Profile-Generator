@@ -10,5 +10,3 @@ let favCard = (data) => {
 
 ${data}
 
-// each class will have a getRole() to check to see what the role is,
-// if (Employee[i] === "manager")

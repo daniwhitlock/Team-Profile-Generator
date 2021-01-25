@@ -29,12 +29,9 @@ mainMenu = function () {
             questions.teamMenu
         )
         .then ((answers) => {
-            console.log(answers);
-            // this is what the console log said: { teamMemberChoice: 'Engineer' }
-            
-            if (answers === "teamMemberChoice: 'Engineer' ") {
+            if (answers.teamMemberChoice === 'Engineer' ) {
                 createEngineer();
-            } else if (answers === 'Intern') {
+            } else if (answers.teamMemberChoice === 'Intern') {
                 createIntern();
             } else {
                 finishedBuildingMyTeam();
@@ -53,7 +50,7 @@ createIntern = function () {
 
             //push all new employees into global array
             employees.push(intern);
-
+            
             //call back main menu function 
             mainMenu();
         })
@@ -68,7 +65,7 @@ createEngineer = function () {
             const engineer = new Engineer (answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
 
             //push all new employees into global array
-            employees.push(intern);
+            employees.push(engineer);
 
             //call back main menu funciton
             mainMenu();
@@ -76,9 +73,12 @@ createEngineer = function () {
 }
 
 finishedBuildingMyTeam = function () {
-    console.log("You've reached the end! ");
+    console.log("You've reached the end! Here's your team members");
+    console.table(employees);
 }
 
 createManager();
+
+module.exports = employees; //need to make sure the correct thing is exporting-- or do I need to??
 
 
