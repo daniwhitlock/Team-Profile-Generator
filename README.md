@@ -25,6 +25,6 @@ Help was given by staff at University of Utah's Full Flex Coding Bootcamp Course
 
 
 ## Tests
-To run test, simply type in: <npm run test> in the command line on your preferred application
+To run test, simply type in: 'npm run test' in the command line on your preferred application
 
 
