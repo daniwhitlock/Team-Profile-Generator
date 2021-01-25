@@ -14,7 +14,7 @@ This program also uses the following programs:
 This application can be used to create a styled HTML document simply by entering data into the command line
 ![image](https://user-images.githubusercontent.com/72768805/105670020-93f33c80-5e9d-11eb-8d3a-088b2f76d82d.png)
 
-//insert video
+![video](https://drive.google.com/file/d/1EFR72GlYUtCnjmKSzOyniJZq1mE23ZGK/preview)
 
 
 ## Credits
