@@ -110,7 +110,7 @@ module.exports = templateData => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="../dist/style.css" />
         <title>Document</title>
     </head>
 
