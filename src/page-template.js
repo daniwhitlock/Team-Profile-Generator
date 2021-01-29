@@ -1,7 +1,4 @@
-const Employee = require("../lib/Employee"); //haven't actually used employee, just manager, engineer, and intern
-const Manager = require("../lib/Manager");
-const Engineer = require("../lib/Engineer");
-const Intern = require("../lib/Intern");
+
 
 let generateManager = (Manager)=> {
     return `
@@ -9,7 +6,7 @@ let generateManager = (Manager)=> {
     <div class="card-body">
         <div class="card-title p-3 mb-2">
             <h2>
-                ${Manager.nameTeamManager}
+                ${Manager.getName()}
             </h2>
             <h3 class="italics">
                 Manager
@@ -18,13 +15,13 @@ let generateManager = (Manager)=> {
 
         <div class="employee-info">
             <p class="card-text">
-                Id: ${Manager.managerId}
+                Id: ${Manager.getId()}
             </p>
             <p class="card-text">
-                Email: ${Manager.managerEmail}
+                Email: <a href="mailto:${Manager.getEmail()}">${Manager.getEmail()}</a>
             </p>
             <p class="card-text">
-                Office number: ${Manager.officeNumber}
+                Office number: ${Manager.getOfficeNumber()}
             </p>
         </div>
     </div>
@@ -37,22 +34,22 @@ let generateEngineer = (Engineer) => {
     <div class="card-body">
         <div class="card-title p-3 mb-2">
             <h2>
-                ${Engineer.engineerName}
+                ${Engineer.getName()}
             </h2>
             <h3 class="italics">
-                Intern
+                Engineer
             </h3>
         </div>
 
         <div class="employee-info">
             <p class="card-text">
-                Id: ${Engineer.engineerId}
+                Id: ${Engineer.getId()}
             </p>
             <p class="card-text">
-                Email: ${Engineer.engineerEmail}
+                Email: <a href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a>
             </p>
             <p class="card-text">
-                Github: ${Engineer.engineerGitHub} <a href="https://${Engineer.engineerGitHub}.github.io" target="_blank" </a>
+             Github: <a href="https://${Engineer.getGitHub()}.github.io" target="_blank" >${Engineer.getGitHub()} </a>
             </p>
         </div>
     </div>
@@ -61,12 +58,13 @@ let generateEngineer = (Engineer) => {
 }
 
 let generateIntern = (Intern) => {
+    
     return `
     <div class="card" style="width: 18rem;">
     <div class="card-body">
         <div class="card-title p-3 mb-2">
             <h2>
-                ${Intern.internName}
+                ${Intern.getName()}
             </h2>
             <h3 class="italics">
                 Intern
@@ -75,13 +73,13 @@ let generateIntern = (Intern) => {
 
         <div class="employee-info">
             <p class="card-text">
-                Id: ${Intern.internId}
+                Id: ${Intern.getId()}
             </p>
             <p class="card-text">
-                Email: ${intern.internEmail}
+                Email: <a href="mailto:${Intern.getEmail()}">${Intern.getEmail()}</a>
             </p>
             <p class="card-text">
-                School: ${Intern.internSchool}
+                School: ${Intern.getSchool()}
             </p>
         </div>
     </div>
@@ -90,10 +88,36 @@ let generateIntern = (Intern) => {
 }
 
 // export function to generate entire page
-module.exports = templateData => {
-    // destructure page data by section
+module.exports = employees => {
+    // console.table(employees);
+    let team = [];
+    for (let i = 0; i < employees.length; i++ ) {
+        console.log(employees[i]);
 
-    const { }
+        switch (employees[i].getRole()) {
+            case 'Manager':
+                let manager = generateManager(employees[i]);
+                team.push(manager);
+                break;
+
+            case 'Engineer':
+                let engineer = generateEngineer(employees[i]);
+                team.push(engineer);
+                break;
+
+            case 'Intern':
+               let intern = generateIntern(employees[i]);
+                team.push(intern);
+                break;
+            default:
+                console.log('Sorry, could not find employees job title');
+                break;
+        }
+
+    }
+    // take the comma out and add a blank space so it all looks like straight html
+    let teamMembers = team.join('');
+  
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -115,9 +139,7 @@ module.exports = templateData => {
             </h1>
         </header>
         <main class=container>
-        ${generateManager(Manager)}    
-        ${generateEngineer(Engineer)}
-        ${generateIntern(Intern)}
+        ${teamMembers}
         </main>
     </body>
     </html>

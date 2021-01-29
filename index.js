@@ -1,10 +1,13 @@
 const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
 const Employee = require('./lib/Employee.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
 const questions = require('./lib/Questions.js');
+const pageTemplate = require('./src/page-template');
+
 
 let employees = [];
 
@@ -74,11 +77,20 @@ createEngineer = function () {
 
 finishedBuildingMyTeam = function () {
     console.log("You've reached the end! Here's your team members");
-    console.table(employees);
-}
+    
+    //write file
+    fs.writeFile(path.join('dist', 'index.html'), pageTemplate(employees), err => {
+        if (err) throw err;
+  
+     console.log('Creating html.');
+    });
+    
+
+};
+
 
 createManager();
 
-module.exports = employees; //need to make sure the correct thing is exporting-- or do I need to??
+
 
 
