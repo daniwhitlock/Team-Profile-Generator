@@ -1,20 +1,15 @@
-const Employee = require("../lib/Employee")
+const Employee = require("../lib/Employee"); //haven't actually used employee, just manager, engineer, and intern
+const Manager = require("../lib/Manager");
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
 
-
-let favCard = (data) => {
-    return `
-    // put data into a card
-    ${data.name}
-    `
-}
-
-let generateManager = ()=> {
+let generateManager = (Manager)=> {
     return `
     <div class="card" style="width: 18rem;">
     <div class="card-body">
         <div class="card-title p-3 mb-2">
             <h2>
-                ${employee}
+                ${Manager.nameTeamManager}
             </h2>
             <h3 class="italics">
                 Manager
@@ -23,26 +18,26 @@ let generateManager = ()=> {
 
         <div class="employee-info">
             <p class="card-text">
-                Id:
+                Id: ${Manager.managerId}
             </p>
             <p class="card-text">
-                Email:
+                Email: ${Manager.managerEmail}
             </p>
             <p class="card-text">
-                Office number:
+                Office number: ${Manager.officeNumber}
             </p>
         </div>
     </div>
 </div>`
 }
 
-let generateEngineer = () => {
+let generateEngineer = (Engineer) => {
     return `
     <div class="card" style="width: 18rem;">
     <div class="card-body">
         <div class="card-title p-3 mb-2">
             <h2>
-                Name
+                ${Engineer.engineerName}
             </h2>
             <h3 class="italics">
                 Intern
@@ -51,13 +46,13 @@ let generateEngineer = () => {
 
         <div class="employee-info">
             <p class="card-text">
-                Id:
+                Id: ${Engineer.engineerId}
             </p>
             <p class="card-text">
-                Email:
+                Email: ${Engineer.engineerEmail}
             </p>
             <p class="card-text">
-                School:
+                Github: ${Engineer.engineerGitHub} <a href="https://${Engineer.engineerGitHub}.github.io" target="_blank" </a>
             </p>
         </div>
     </div>
@@ -65,29 +60,28 @@ let generateEngineer = () => {
 `
 }
 
-let generateIntern = () => {
+let generateIntern = (Intern) => {
     return `
     <div class="card" style="width: 18rem;">
     <div class="card-body">
         <div class="card-title p-3 mb-2">
             <h2>
-                Name
+                ${Intern.internName}
             </h2>
             <h3 class="italics">
-                Engineer
+                Intern
             </h3>
         </div>
 
         <div class="employee-info">
             <p class="card-text">
-                Id:
+                Id: ${Intern.internId}
             </p>
             <p class="card-text">
-                Email:
+                Email: ${intern.internEmail}
             </p>
             <p class="card-text">
-                Github:
-                <!--insert github link--> <a href="https:// <!--githublink-->.github.io" target="_blank" </a>
+                School: ${Intern.internSchool}
             </p>
         </div>
     </div>
